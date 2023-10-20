@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mapbox.services.android.ui.geocoder.GeocoderAutoCompleteView
+        android:id="@+id/query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="18dp"
+        android:background="@android:color/white"
+        android:elevation="12dp"
+        android:hint="Search Location"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black" />
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="38.9098"
+        mapbox:mapbox_cameraTargetLng="-77.0295"
+        mapbox:mapbox_cameraZoom="12" />
+
+    <!--<Button-->
+        <!--android:id="@+id/startButton"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginBottom="251dp"-->
+        <!--android:background="@drawable/button_round"-->
+        <!--android:enabled="false"-->
+        <!--android:text="Start navigation"-->
+        <!--android:textColor="@color/white"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/mapView"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.0"-->
+        <!--app:layout_constraintVertical_bias="0.943"-->
+        <!--mapbox:layout_constraintStart_toStartOf="parent"-->
+        <!--mapbox:layout_constraintTop_toTopOf="parent" />-->
+
+    <ImageView
+        android:id="@+id/imgHome"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_home_black_24dp"
+        android:tint="@color/mongoRed" />
+
+    <ImageView
+        android:id="@+id/imgNavigate"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_navigation"
+        android:tint="@color/mongoRed" />
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+﻿@model Shop.Core.ViewModels.ProductListViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div class="container text-center mt-5">
+        <h1>Products</h1>
+    </div>
+
+    <div class="container text-center mt-2 p-3">
+        <div class="row">
+            <div class="col-md-2">
+                <h5>Filter by Category Or Search</h5>
+
+                <div class="list-group">
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+                    {
+                        @Html.TextBox("search") <input type="submit" value="Search">
+                        <hr />
+
+                        @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
+                        foreach (var category in Model.ProductCategories)
+                        {
+                            @Html.ActionLink(category.Category, "Index", new { Category = category.Category }, new { @class = Request["Category"] == category.Category ? "list-group-item active" : "list-group-item" })
+                        }
+                    }
+                </div>
+            </div>
+
+            @foreach (var item in Model.Products)
+            {
+                <div class="col-md-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 m-4">
+                                <div class="card">
+
+                                    <div class="container">
+                                        <div class="row mt-3">
+                                            <div class="col-md-12">
+                                                <img class="img-fluid rounded" style="height:250px" src="~/Content/productImages/@item.Image" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.ActionLink(item.Name, "Details", new { ID = item.ID })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>@item.Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4>@String.Format("{0:c}", item.Price)</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="row mb-3">
+                                            <div class="col-md-12">
+                                                <a href="@Url.Action("AddToBasket","Basket", new { ID = item.ID } )" class="btn btn-lg btn-info px-5">Add To Basket</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</body>
+</html>

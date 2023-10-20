@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".Element_Gem.GameActivity">
+
+    <TextView
+        android:id="@+id/scoreLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/holo_orange_dark"
+        android:gravity="center"
+        android:paddingVertical="14dp"
+        android:text="Score: 0"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/gameFrame"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/car"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/car" />
+
+        <ImageView
+            android:id="@+id/bomb"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/bomb" />
+
+        <ImageView
+            android:id="@+id/mango"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/mango" />
+
+        <ImageView
+            android:id="@+id/apple"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/apple" />
+
+        <LinearLayout
+            android:id="@+id/startLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Catch That Mongo"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/button_round"
+                android:onClick="startGame"
+                android:text="Start"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnQuit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_round"
+                android:onClick="quitGame"
+                android:text="Quit"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

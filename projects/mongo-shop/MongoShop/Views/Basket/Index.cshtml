@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Shop.Core.ViewModels.BasketItemViewModel>
+@{
+    ViewBag.Title = "Basket Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+        <h2>Basket</h2>
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>Line Total</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img class="img" style="height:50px" src="~/Content/productImages/@item.Image" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @String.Format("{0:c}", item.Price)
+                    </td>
+                    <td>
+                        @String.Format("{0:c}", item.Price * item.Quantity)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("RemoveFromBasket","Basket", new { ID = item.ID } )" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="4" style="text-align:right">
+                    <strong>Basket Total</strong>
+                </td>
+                <td>
+                    @String.Format("{0:c}", (from p in Model select p.Quantity * p.Price).Sum())
+                </td>
+                <td><a href="@Url.Action("Checkout", "Basket")" class="btn btn-success">Checkout</a></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

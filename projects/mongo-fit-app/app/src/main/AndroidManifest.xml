@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bevan.mongofit">
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="keyboardHidden|orientation"
+        android:icon="@drawable/fiticon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="nosensor"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Loading">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginANDregister.Login" />
+        <activity android:name=".LoginANDregister.Register" />
+        <activity
+            android:name=".Landing"
+            android:label="@string/title_activity_landing"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MenuActivities.Profile" />
+        <activity android:name=".MenuActivities.Settings" />
+        <activity android:name=".MenuActivities.Help" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".MenuActivities.Camera" />
+        <activity android:name=".LoginANDregister.Register2" />
+        <activity android:name=".MenuActivities.Quit" />
+        <activity android:name=".MenuActivities.historyWeight"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,23 @@
+﻿@model Shop.Core.ViewModels.BasketSummaryViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BasketSummary</title>
+</head>
+<body>
+    <div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-link" href="@Url.Action("Index", "Basket",null)">@Model.BasketCount Items</a></li>
+            <li><a class="nav-link" href="@Url.Action("Index", "Basket", null)">@String.Format("{0:c}", Model.BasketTotal)</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>

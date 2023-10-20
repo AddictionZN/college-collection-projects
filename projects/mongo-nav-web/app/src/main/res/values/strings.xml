@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MongoNav</string>
+    <string name="access_token">pk.eyJ1IjoiYmV2YW4tdmVudGVyLWRldiIsImEiOiJjanVncHVrcnowNXl2NGRxbXRrdG9lamRiIn0.3FpDkUtF1yEX7ZBvuKKZPA</string>
+    <string name="string_start_navigation" />
+    <string name="string_string_start_navigation">wdw</string>
+    <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
+
+    <!--Transport-->
+    <string-array name="transport">
+        <item>Car</item>
+        <item>Walking</item>
+        <item>Cycling</item>
+    </string-array>
+
+    <!--System-->
+    <string-array name="system">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </string-array>
+
+    <!--Mode-->
+    <string-array name="mode">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Satellite</item>
+        <item>Streets</item>
+        <item>Traffic</item>
+    </string-array>
+
+
+</resources>

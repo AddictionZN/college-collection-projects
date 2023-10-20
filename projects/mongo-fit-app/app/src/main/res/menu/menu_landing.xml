@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bevan.mongofit.Landing">
+    <item
+        android:id="@+id/profile"
+        android:orderInCategory="101"
+        android:title="Profile"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/setting"
+        android:orderInCategory="101"
+        android:title="Settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/history"
+        android:orderInCategory="100"
+        android:title="History Weight" />
+
+    <item
+        android:id="@+id/camera"
+        android:orderInCategory="101"
+        android:title="Camera"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/quit"
+        android:orderInCategory="101"
+        android:title="Quit"
+        app:showAsAction="never" />
+
+</menu>

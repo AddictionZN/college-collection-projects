@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Shop.Core.Models.OrderItem>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>Line Total</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @String.Format("{0:c}", item.Price * item.Quantity)
+            </td>
+            <td>
+                @String.Format("{0:c}", item.Price)
+            </td>
+            <td>
+                @String.Format("{0:c}", item.Price * item.Quantity)
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="3" style="text-align:right">
+            <strong>Order Total</strong>
+        </td>
+        <td>
+            @String.Format("{0:c}", (from p in Model select p.Quantity * p.Price).Sum())
+        </td>
+    </tr>
+
+</table>

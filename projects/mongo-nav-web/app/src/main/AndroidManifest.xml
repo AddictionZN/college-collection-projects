@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mongonav">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/mongoicon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/mongoicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activities.TripsActivity"></activity>
+        <activity android:name=".Activities.SettingActivity" />
+        <activity android:name=".Element_Gem.GameActivity" />
+        <activity android:name=".Activities.ProfileActivity" />
+        <activity android:name=".Activities.MapsActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".Login.SignupActivity" />
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".Load.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Shop.Core.Models.ProductCategory>
+
+@{
+    ViewBag.Title = "Category Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { ID = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { ID = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</body>
+</html>
